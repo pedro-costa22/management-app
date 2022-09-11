@@ -1,6 +1,13 @@
 import styled, {createGlobalStyle} from 'styled-components'
 
+//fonts 
+import { spaceGrotesk } from '../fonts/fonts';
+
+
 const GlobalStyle: any = createGlobalStyle`
+    @import url(${spaceGrotesk});
+    
+
     * {
         margin: 0;
         padding: 0;
@@ -17,11 +24,14 @@ const GlobalStyle: any = createGlobalStyle`
     }
 
     :root{
-        --bg-color: #fff;
+        --bg-white: #F9F9F9;
+        --color-primary: #A862FF;
+        --color-secondary: #C97FFF;
     }
 
     body {
-        background-color: var(--bg-color);
+        background-color: var(--bg-white);
+        font-family: 'Space Grotesk', sans-serif;
     }
 
 

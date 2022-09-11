@@ -1,1 +1,0 @@
-Essa pasta irá conter os link's para as fontes que serão utilizadas no projeto;
