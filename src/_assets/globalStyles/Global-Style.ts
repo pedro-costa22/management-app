@@ -27,11 +27,13 @@ const GlobalStyle: any = createGlobalStyle`
         --bg-white: #F9F9F9;
         --color-primary: #A862FF;
         --color-secondary: #C97FFF;
+        --text: rgba(0, 0, 0, 0.7);
     }
 
     body {
         background-color: var(--bg-white);
-        font-family: 'Space Grotesk', sans-serif;
+        font-family: 'Roboto', sans-serif;
+
     }
 
 

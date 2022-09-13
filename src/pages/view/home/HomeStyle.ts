@@ -1,6 +1,5 @@
 import styled from "styled-components";
-//@ts-ignore
-import backgroundHome from "../../../_assets/img/background-home.png";
+const backgroundHome = require('../../../_assets/img/background-home.png') as string;
 
 export const Header = styled.header`
     width: 100%;
@@ -21,8 +20,12 @@ export const Intro = styled.div`
 
 
     .intro_text {
-        font-size: 1.5rem;
         width: 600px;
+        h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2.2rem;
+            color: var(--text);
+        }
 
         span {
             color: var(--color-secondary);
@@ -34,7 +37,10 @@ export const Intro = styled.div`
         }
 
         button {
-            font-size: 1.4rem;
+            text-transform: uppercase;
+            font-size: 1.1rem;
+            font-weight: 500;
+            letter-spacing: 1px;
             color: #fff;
             width: 320px;
             height: 50px;
@@ -87,4 +93,53 @@ export const Next = styled.div`
             opacity: 0;
         }
     }
+`;
+
+
+export const MainERP = styled.main`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 1120px;
+    margin: 0 auto;
+    height: 100vh;
+    position: relative;
+
+    .erp_title {
+        font-size: 2.2rem;
+        margin-bottom: 60px;
+        color: var(--text);
+
+        span {
+            color: var(--color-primary);
+        }
+    }
+
+    .cont_img {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+
+        img {
+            width: 800px;
+            box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+        }
+
+        p {
+            font-size: 1.4rem;
+            font-weight: 500;
+            margin: 15px 0;
+            max-width: 300px;
+            color: var(--text);
+        }
+    }
+
+    .dashimg {
+        display: flex;
+        align-items: flex-end;
+        position: absolute;
+        top: 380px; 
+    }
+
 `;

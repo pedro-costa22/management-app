@@ -36,8 +36,9 @@ export const Nav = styled.div`
                 cursor: pointer;
 
                 a {
+                    font-family: 'Space Grotesk', sans-serif;
                     font-size: 1.2rem;
-                    color: #000;
+                    color: var(--text);
                     font-weight: 500;
                     padding: 0 15px;
                     transition: all .3s;
