@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from  'react-router-dom';
 
 //style
-import GlobalStyle from "./_assets/globalStyles/Global-Style";
+import GlobalStyle from './assets/globalStyles/Global-Style';
 
 //pages
 import { Home } from './pages/view/home/Home';
