@@ -28,6 +28,9 @@ const GlobalStyle: any = createGlobalStyle`
         --color-primary: #A862FF;
         --color-secondary: #C97FFF;
         --text: rgba(0, 0, 0, 0.7);
+        --lilas-default: #A55FFF;
+        --blue-default: #399AE6;
+        --green-default: #3CD8BF;
     }
 
     body {

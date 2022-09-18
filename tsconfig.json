@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "ES6",
     "lib": [
       "dom",
       "dom.iterable",
@@ -19,10 +19,11 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
+    "baseUrl": "src"
     
   },
   "include": [
     "src",
-    "styled.d.ts",
-  ]
+    "src/index.d.ts"
+  ],
 }
