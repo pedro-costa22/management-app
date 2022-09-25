@@ -25,6 +25,7 @@ const GlobalStyle: any = createGlobalStyle`
 
     :root{
         --bg-white: #F9F9F9;
+        --bg-layout: #F2EDF3;
         --color-primary: #A862FF;
         --color-secondary: #C97FFF;
         --text: rgba(0, 0, 0, 0.7);

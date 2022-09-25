@@ -17,11 +17,15 @@ import { Navbar } from "./Navbar/Navbar";
 import dash_vector from '../../../assets/img/dashboard-vector.png';
 import inventory_control from '../../../assets/img/inventory_control.png';
 import global_dashboard from '../../../assets/img/global_dashboard.png';
+import { AuthContext } from "context/AuthProvider/AuthProvider";
+import { useContext } from "react";
 
 
 export const Home = () =>{
 
   const navigate = useNavigate();
+  const context = useContext(AuthContext);
+  
 
   return (
     <>
@@ -47,7 +51,7 @@ export const Home = () =>{
       </Header>
 
       <Next>
-        <FiChevronsDown className="icon_next"/>
+        <FiChevronsDown className="icon_next" />
       </Next>
 
       <MainERP id="erp">
