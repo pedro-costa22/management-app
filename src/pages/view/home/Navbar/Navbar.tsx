@@ -1,3 +1,5 @@
+import React from "react";
+
 //navigate
 import { useNavigate } from "react-router-dom";
 import { Link } from 'react-scroll';

@@ -25,12 +25,14 @@ const GlobalStyle: any = createGlobalStyle`
 
     :root{
         --bg-white: #F9F9F9;
+        --bg-layout: #F2EDF3;
         --color-primary: #A862FF;
         --color-secondary: #C97FFF;
         --text: rgba(0, 0, 0, 0.7);
         --lilas-default: #A55FFF;
         --blue-default: #399AE6;
         --green-default: #3CD8BF;
+        --error-color: #FF5271;
     }
 
     body {
