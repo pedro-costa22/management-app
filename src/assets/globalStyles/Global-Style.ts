@@ -32,6 +32,7 @@ const GlobalStyle: any = createGlobalStyle`
         --lilas-default: #A55FFF;
         --blue-default: #399AE6;
         --green-default: #3CD8BF;
+        --error-color: #FF5271;
     }
 
     body {
