@@ -58,6 +58,7 @@ export const AuthProvider = ({children}: IAuthProvider) => {
         setUser(null);
         setUserLocalStorage(null);
 
+
     } 
 
     return (
