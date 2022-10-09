@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from  'react-router-dom';
 
 //contexts
 import { AuthProvider } from 'context/AuthProvider/AuthProvider';
+import { UserConfigProvider } from 'context/ConfigModal/ConfigModal';
 
 //style
 import GlobalStyle from './assets/globalStyles/Global-Style';
@@ -27,6 +28,7 @@ import { Goals } from './pages/containers/content/goals/Goals';
 function App() {
   return (
       <AuthProvider>
+        <UserConfigProvider>
         <GlobalStyle />
         <Router>
           <Routes>
@@ -45,6 +47,7 @@ function App() {
            
           </Routes>
         </Router>
+        </UserConfigProvider>
       </AuthProvider>
   );
 }

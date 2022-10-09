@@ -1,21 +1,28 @@
 import { useNavigate, useParams } from 'react-router-dom'
+import { useContext, useEffect, useState } from 'react';
 
 //styles
 import { BtnLogout, BtnMenuMobile, HeaderMenu, Menu, UserOptions } from './SideMenuStyle';
 
 //icons
 import { FaBoxOpen, FaCoins, FaUserFriends, FaLayerGroup, FaChartPie, FaCheckCircle, FaPowerOff } from "react-icons/fa";
-import { FiSettings, FiEdit, FiArrowRight, FiArrowLeft } from "react-icons/fi";
-import { useContext, useEffect, useState } from 'react';
+import { FiSettings, FiUser, FiArrowRight, FiArrowLeft } from "react-icons/fi";
+
 
 //utils
-import { getUserLocalStorage } from 'context/AuthProvider/utils';
+import { getUserLocalStorage } from 'context/utils/utils';
 import { AuthContext } from 'context/AuthProvider/AuthProvider';
+
+
+//modal
+import { UserConfigContext } from 'context/ConfigModal/ConfigModal';
+
 
 export const SideMenu = () =>{
     const contextUser = useContext(AuthContext);
-
+    const userConfig = useContext(UserConfigContext);
     const navigate = useNavigate();
+
 
     const [openMenu, setOpenMenu] = useState<boolean>(false);
     const [selected, setSelected] = useState({
@@ -25,6 +32,10 @@ export const SideMenu = () =>{
         employee: false,
         projects: false,
         goals: false
+    });
+    const [user, setUser] = useState({
+        userName: getUserLocalStorage().name,
+        userProfile: getUserLocalStorage().profile
     });
     
     const handleSelected = (selectorPage: string) => {
@@ -44,6 +55,15 @@ export const SideMenu = () =>{
         }));
     }
 
+    useEffect(() => {
+        setUser(prevState => ({
+            ...prevState,
+            userName: getUserLocalStorage().name,
+            userProfile: getUserLocalStorage().profile
+        }))
+
+    }, [getUserLocalStorage()])
+
 
     return (
         <Menu active={openMenu}>
@@ -53,14 +73,20 @@ export const SideMenu = () =>{
 
             <UserOptions>
                 <div className='userImg'>
-                    <label htmlFor='avatar'><FiEdit size={20}/></label>
-                    <input type="file" name='avatar' id='avatar'/>
+                    <span>
+                        {contextUser.profile !== '' ? 
+                            <img className='userProfile' src={user.userProfile} alt="profile user"/>
+                        : 
+                            <FiUser className='userProfileIcon'/>
+                        }
+                    </span>
+
                 </div>
                 <div className='userInfos'>
-                    <p className='nameUser'>{contextUser.name}</p>
+                    <p className='nameUser'>{user.userName}</p>
                     <div className='userFooter'>
                         <p>Empresa S/A </p>
-                        <span className='btnTheme'><FiSettings size={16}/></span> 
+                        <span className='btnTheme'><FiSettings className='btnConfig' onClick={() => userConfig.setOpenModal(true)}/></span> 
                     </div>
                 </div>
             </UserOptions>

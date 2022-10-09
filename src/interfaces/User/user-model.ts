@@ -1,7 +1,8 @@
 export interface IUser {
     email?: string;
     id?: number;
-    name?: number;
+    name?: string;
+    profile?: string;
 }
 
 export interface IContextUser extends IUser {
@@ -11,7 +12,7 @@ export interface IContextUser extends IUser {
 }
 
 export interface IAuthProvider {
-    children: JSX.Element[];
+    children: JSX.Element;
 }
 
 export interface IUserRegister {

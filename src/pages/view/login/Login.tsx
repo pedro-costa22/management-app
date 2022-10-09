@@ -26,7 +26,7 @@ export const Login = () =>{
 
     async function login(email: string, password: string) {
        if(email != '' && password != ''){
-				const loginAuthenticate = await contextAuth.authenticate(email, password);
+		const loginAuthenticate = await contextAuth.authenticate(email, password);
         if(loginAuthenticate.erro === true){
             return setLoginErro(true);
         }

@@ -240,8 +240,25 @@ export const UserOptions = styled.div`
             display: none;
         }
 
-        label {
-            cursor: pointer;
+        span {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 58px;
+            height: 58px;
+            border-radius: 50%;
+
+            .userProfile {
+                width: 58px;
+                height: 58px;
+                border-radius: 50%;
+                box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+            }
+
+            .userProfileIcon {
+                font-size: 1.5rem;
+                color: var(--text);
+            }
         }
  
     }
@@ -270,8 +287,14 @@ export const UserOptions = styled.div`
             font-weight: 500;
             }
 
-            .btnTheme {
+            .btnConfig {
+                font-size: 1rem;
                 cursor: pointer;
+                transition: all ease .2s;
+
+                :hover {
+                    color: var(--color-secondary);
+                }
             }
 
         }
