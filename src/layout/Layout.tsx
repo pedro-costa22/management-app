@@ -1,21 +1,32 @@
 import { Outlet } from "react-router-dom";
 import { SideMenu } from "../pages/containers/menu/SideMenu";
+import { ContLayout } from "./LayoutStyle";
+import { useContext } from "react";
+
 import { ProtectedLayout } from "./ProtectedLayout/ProtectedLayout";
 
+//modal
+import { UserConfigModal } from "components/UserConfigModal/UserConfigModal";
+import { UserConfigContext } from "context/ConfigModal/ConfigModal";
+
+
+
 const Layout = () => {
+
+    const userConfig = useContext(UserConfigContext);
+
     return (
         <ProtectedLayout>
-            <div>
-            <div className='menu'>
-                <SideMenu />
-                <h4>estou no layout</h4>
-            </div>
-
-             <div>
-                <Outlet />
+            {userConfig.openModal && <UserConfigModal />}
+            <ContLayout>
+                <div className='menu'>
+                    <SideMenu />
                 </div>
-                
-            </div>
+
+                <div className="content">
+                    <Outlet />
+                </div>
+            </ContLayout>
         </ProtectedLayout>
     );
 }
