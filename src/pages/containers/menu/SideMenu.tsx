@@ -17,12 +17,14 @@ import { AuthContext } from 'context/AuthProvider/AuthProvider';
 //modal
 import { UserConfigContext } from 'context/ConfigModal/ConfigModal';
 
+//date
+import { monthN, year } from './Date';
+
 
 export const SideMenu = () =>{
     const contextUser = useContext(AuthContext);
     const userConfig = useContext(UserConfigContext);
     const navigate = useNavigate();
-
 
     const [openMenu, setOpenMenu] = useState<boolean>(false);
     const [selected, setSelected] = useState({
@@ -55,14 +57,20 @@ export const SideMenu = () =>{
         }));
     }
 
-    useEffect(() => {
-        setUser(prevState => ({
-            ...prevState,
-            userName: getUserLocalStorage().name,
-            userProfile: getUserLocalStorage().profile
-        }))
+    const handleLogout = () => {
+        contextUser.logout();
+        navigate('/');
 
-    }, [getUserLocalStorage()])
+    }
+
+   useEffect(() => {
+    setUser(prevState => ({
+        ...prevState,
+        userName: getUserLocalStorage().name,
+        userProfile: getUserLocalStorage().profile
+    }))
+
+    }, [getUserLocalStorage().name, getUserLocalStorage().profile]) 
 
 
     return (
@@ -74,7 +82,7 @@ export const SideMenu = () =>{
             <UserOptions>
                 <div className='userImg'>
                     <span>
-                        {contextUser.profile !== '' ? 
+                        {user.userProfile !== '' ? 
                             <img className='userProfile' src={user.userProfile} alt="profile user"/>
                         : 
                             <FiUser className='userProfileIcon'/>
@@ -85,8 +93,8 @@ export const SideMenu = () =>{
                 <div className='userInfos'>
                     <p className='nameUser'>{user.userName}</p>
                     <div className='userFooter'>
-                        <p>Empresa S/A </p>
-                        <span className='btnTheme'><FiSettings className='btnConfig' onClick={() => userConfig.setOpenModal(true)}/></span> 
+                        <p>{monthN} - {year}</p>
+                        <span><FiSettings className='btnConfig' onClick={() => userConfig.setOpenModal(true)}/></span> 
                     </div>
                 </div>
             </UserOptions>
@@ -136,8 +144,12 @@ export const SideMenu = () =>{
             </ul>
 
             <BtnLogout>
-                <FaPowerOff className="iconLogout"/>
-                <p>Encerrar sessão</p>
+                <div className='logout' onClick={handleLogout}>
+                    <FaPowerOff className="iconLogout" />
+                    <p>Encerrar sessão</p>
+                </div>
+
+                <span><FiSettings className='btnConfig btnConfigResponsive' onClick={() => userConfig.setOpenModal(true)}/></span> 
             </BtnLogout>
 
             <BtnMenuMobile onClick={() => setOpenMenu(!openMenu)}>

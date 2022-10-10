@@ -20,6 +20,7 @@ export const ModalOptions = styled.div`
     padding: 28px 28px;
     background-color: #fff;
     border-radius: 8px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     z-index: 9999;
     
 
@@ -305,6 +306,159 @@ export const ModalOptions = styled.div`
 
             .responseIcon {
                 margin-right: 8px;
+            }
+        }
+    }
+
+    //responsive 
+    @media screen and (max-width: 575.98px) {
+        width: 90%;
+        height: 98vh;
+
+        //modalHeader
+        .modalHeader {
+            h4 {
+                font-size: 1rem;
+            }
+
+            p {
+                font-size: .8rem;
+            }
+        }
+
+        //edit user
+        .editName {
+            flex-direction: column;
+            align-items: flex-start;
+            margin-top: 28px;
+
+            label {
+                font-size: .9rem;
+                margin-bottom: 5px;
+            }
+
+            input {
+                width: 100%;
+                height: 40px;
+            }
+        }
+
+        .editPassword {
+            margin-top: 28px;
+
+            .passwordLabel {
+                font-size: 1rem;
+            }
+
+            .passwordInputs {
+                flex-direction: column;
+                height: 100%;
+                input {
+                    width: 100%;
+                    height: 40px;
+                    padding-right: 2px;
+                }
+            }
+        }
+
+        .response {
+            font-size: .9rem;
+        }
+
+        .modalInfos {
+            .userAvatar {
+                .loading {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    @media screen and (min-width: 576px) and (max-width: 767.98px) {
+        width: 90%;
+        height: 680px;
+
+        //modalHeader
+        .modalHeader {
+            h4 {
+                font-size: 1rem;
+            }
+
+            p {
+                font-size: .8rem;
+            }
+        }
+
+        //edit user
+        .editName {
+            flex-direction: column;
+            align-items: flex-start;
+            margin-top: 28px;
+
+            label {
+                font-size: .9rem;
+                margin-bottom: 5px;
+            }
+
+            input {
+                width: 100%;
+                height: 40px;
+            }
+        }
+
+        .editPassword {
+            margin-top: 28px;
+
+            .passwordLabel {
+                font-size: 1rem;
+            }
+
+            .passwordInputs {
+                flex-direction: column;
+                height: 100%;
+                input {
+                    width: 100%;
+                    height: 40px;
+                    padding-right: 2px;
+                }
+            }
+        }
+
+        .response {
+            font-size: .9rem;
+        }
+    }
+
+    @media screen and (min-width: 992px) and (max-width: 1199.98px) {
+        width: 620px;
+        height: 580px;
+
+        //edit user
+        .editName {
+            margin-top: 28px;
+
+            label {
+                font-size: 1rem;
+            }
+
+            input {
+                height: 40px;
+            }
+        }
+
+        .editPassword {
+            margin-top: 28px;
+
+            .passwordLabel {
+                font-size: 1rem;
+            }
+
+            .passwordInputs {
+                input {
+                    width: 278px;
+                    height: 40px;
+                    padding-right: 2px;
+                }
             }
         }
     }

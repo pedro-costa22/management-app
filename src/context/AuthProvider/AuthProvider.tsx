@@ -3,6 +3,7 @@ import { IAuthProvider, IContextUser, IUser } from 'interfaces/User/user-model';
 import { RegisterRequest, LoginRequest } from './utilsAuth';
 import { getUserLocalStorage, setUserLocalStorage } from 'context/utils/utils';
 
+
 export const AuthContext = createContext<IContextUser>({} as IContextUser);
 
 export const AuthProvider = ({children}: IAuthProvider) => {

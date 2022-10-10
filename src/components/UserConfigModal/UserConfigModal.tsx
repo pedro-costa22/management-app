@@ -181,7 +181,7 @@ export const UserConfigModal = () => {
                         <span className="addImg">
                             <label htmlFor='avatar'><FiEdit className="editIcon"/></label>
                             <input type="file" name='avatar' id='avatar'/>
-                            {contextUser.profile !== '' ? 
+                            {profileUser !== '' ? 
                                 <img className="imgProfile" src={profileUser} />
                             : ''}
                         </span>

@@ -69,7 +69,7 @@ export const Menu = styled.nav<{active: boolean}>`
     @media screen and (max-width: 575.98px) {
         position: absolute;
         width: 120px;
-        z-index: 999;
+        z-index: 99;
         left: ${props => props.active != true ? '-105px' : '0px'};
         padding: 18px 18px;
         box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
@@ -101,7 +101,7 @@ export const Menu = styled.nav<{active: boolean}>`
     @media screen and (min-width: 576px) and (max-width: 767.98px) {
         position: absolute;
         width: 120px;
-        z-index: 999;
+        z-index: 99;
         left: ${props => props.active != true ? '-105px' : '0px'};
         padding: 18px 18px;
         box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
@@ -133,7 +133,7 @@ export const Menu = styled.nav<{active: boolean}>`
     @media screen and (min-width: 768px) and (max-width: 991.98px) {
         position: absolute;
         width: 120px;
-        z-index: 999;
+        z-index: 99;
         left: ${props => props.active != true ? '-105px' : '0px'};
         padding: 18px 18px;
         box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
@@ -406,24 +406,39 @@ export const BtnLogout = styled.div`
     background: transparent;
     position: absolute;
     bottom: 48px;
-    cursor: pointer;
     color: var(--text);
 
-    .iconLogout {
-        font-size: 18px;
+    .logout {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+
+        .iconLogout {
+            font-size: 18px;
+            transition: all .2s;
+        }
+
+        p {
+            font-family: "Poppins", sans-serif;
+            font-size: 1.1rem;
+            margin-left: 10px;
+
+        }
     }
 
-    p {
-        font-family: "Poppins", sans-serif;
-        font-size: 1.1rem;
-        margin-left: 10px;
+    .btnConfigResponsive {
+        display: none;
     }
 
     //Responsive
     @media screen and (max-width: 575.98px) {
-        justify-content: center;
+        flex-direction: column-reverse;
+        justify-content: space-around;
+        height: 68px;
         align-items: center;
-        left: 38%;
+        left: 40%;
+        bottom: 10px;
+
 
         p {
             display: none;
@@ -431,12 +446,18 @@ export const BtnLogout = styled.div`
 
         .iconLogout {
             font-size: 22px;
-            
+        }
+
+        .btnConfigResponsive {
+            display: block;
+            font-size: 18px;
         }
     } 
 
     @media screen and (min-width: 576px) and (max-width: 767.98px) {
-        justify-content: center;
+        flex-direction: column-reverse;
+        justify-content: space-around;
+        height: 88px;
         align-items: center;
         left: 38%;
 
@@ -445,14 +466,20 @@ export const BtnLogout = styled.div`
         }
 
         .iconLogout {
-            font-size: 28px;
-            
+            font-size: 28px; 
+        }
+
+        .btnConfigResponsive {
+            display: block;
+            font-size: 24px;
         }
     }
 
     @media screen and (min-width: 768px) and (max-width: 991.98px) {
-        justify-content: center;
+        flex-direction: column-reverse;
+        justify-content: space-around;
         align-items: center;
+        height: 88px;
         left: 38%;
 
         p {
@@ -461,6 +488,11 @@ export const BtnLogout = styled.div`
 
         .iconLogout {
             font-size: 28px;
+        }
+
+        .btnConfigResponsive {
+            display: block;
+            font-size: 24px;
         }
     }
 
@@ -493,6 +525,8 @@ export const BtnMenuMobile = styled.div`
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     cursor: pointer;
     transition: all ease .2s;
+
+
     
    
     .iconMenu {
