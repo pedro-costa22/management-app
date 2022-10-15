@@ -35,7 +35,7 @@ export const TitleCont = styled.div`
 
     //Responsive
     @media screen and (max-width: 575.98px) {
-        padding: 40px 28px;
+        padding: 28px;
 
         .iconPage {
             width: 60px;
@@ -52,6 +52,7 @@ export const TitleCont = styled.div`
     }
 
     @media screen and (min-width: 576px) and (max-width: 767.98px) {
+        padding: 28px 40px;
         .iconPage {
             width: 60px;
             height: 60px;
