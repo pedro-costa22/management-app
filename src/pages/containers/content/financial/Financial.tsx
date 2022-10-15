@@ -1,9 +1,18 @@
+import { HeaderSearch } from "components/HeaderSearch/HeaderSearch";
+import { PageTitle } from "components/PageTitle/PageTitle";
 
-
+import { FaCoins } from "react-icons/fa";
 
 export const Financial = () =>{
     return (
-        <h1>Controle financeiro</h1>
+        <>
+            <HeaderSearch />
+            <PageTitle 
+                icon={<FaCoins />}
+                title="Controle financeiro"
+            />
+    
+        </>
     )
 };
 

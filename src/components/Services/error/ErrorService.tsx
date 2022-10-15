@@ -1,7 +1,7 @@
 import { Error } from "./ErrorStyle";
 import { FiXOctagon } from "react-icons/fi";
 import { useEffect, useState } from "react";
-import { IErrorService } from "interfaces/Services/error-panel";
+import { IErrorService } from "interfaces/Services/error.panel";
 
 export const ErrorService = ({errorText}: IErrorService) => {
 

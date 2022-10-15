@@ -401,12 +401,12 @@ export const UserOptions = styled.div`
 
 export const BtnLogout = styled.div`
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     border: none;
     background: transparent;
-    position: absolute;
-    bottom: 48px;
+    height: 50%;
     color: var(--text);
+    padding-left: 12px;
 
     .logout {
         display: flex;
@@ -433,12 +433,9 @@ export const BtnLogout = styled.div`
     //Responsive
     @media screen and (max-width: 575.98px) {
         flex-direction: column-reverse;
-        justify-content: space-around;
-        height: 68px;
         align-items: center;
-        left: 40%;
-        bottom: 10px;
-
+        padding: 0;
+        
 
         p {
             display: none;
@@ -451,15 +448,15 @@ export const BtnLogout = styled.div`
         .btnConfigResponsive {
             display: block;
             font-size: 18px;
+            margin-bottom: 18px;
         }
     } 
 
     @media screen and (min-width: 576px) and (max-width: 767.98px) {
         flex-direction: column-reverse;
-        justify-content: space-around;
-        height: 88px;
         align-items: center;
-        left: 38%;
+        padding: 0;
+
 
         p {
             display: none;
@@ -472,15 +469,14 @@ export const BtnLogout = styled.div`
         .btnConfigResponsive {
             display: block;
             font-size: 24px;
+            margin-bottom: 18px;
         }
     }
 
     @media screen and (min-width: 768px) and (max-width: 991.98px) {
         flex-direction: column-reverse;
-        justify-content: space-around;
         align-items: center;
-        height: 88px;
-        left: 38%;
+        padding: 0;
 
         p {
             display: none;
@@ -493,6 +489,7 @@ export const BtnLogout = styled.div`
         .btnConfigResponsive {
             display: block;
             font-size: 24px;
+            margin-bottom: 18px;
         }
     }
 
@@ -527,8 +524,6 @@ export const BtnMenuMobile = styled.div`
     transition: all ease .2s;
 
 
-    
-   
     .iconMenu {
         color: var(--color-secondary);
         font-size: 1.2rem;
