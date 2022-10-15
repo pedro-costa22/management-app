@@ -1,5 +1,17 @@
+import { HeaderSearch } from "components/HeaderSearch/HeaderSearch"
+import { PageTitle } from "components/PageTitle/PageTitle"
+
+import { FaCheckCircle } from "react-icons/fa";
+
 export const Goals = () => {
     return (
-        <h1> Objetivos </h1>
+        <>
+            <HeaderSearch />
+            <PageTitle 
+                icon={<FaCheckCircle />}
+                title="Projetos"
+            />
+
+        </>
     )
 }

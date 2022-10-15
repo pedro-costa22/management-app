@@ -1,9 +1,18 @@
+import { HeaderSearch } from "components/HeaderSearch/HeaderSearch";
+import { PageTitle } from "components/PageTitle/PageTitle";
 
-
+import { FaLayerGroup } from "react-icons/fa";
 
 export const Projects = () =>{
     return (
-        <h1>Projetos</h1>
+        <>
+            <HeaderSearch />
+            <PageTitle 
+                icon={<FaLayerGroup />}
+                title="Gestão de projetos"
+            />
+
+        </>
     )
 };
 

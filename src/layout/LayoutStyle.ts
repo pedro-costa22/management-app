@@ -7,6 +7,10 @@ export const ContLayout = styled.section`
     grid-template-columns: minmax(370px, 1fr) 5fr;
     background-color: var(--bg-layout);
 
+    .content {
+        width: 100%;
+    }
+
     @media screen and (max-width: 575.98px)  {
         .content {
             position: absolute;

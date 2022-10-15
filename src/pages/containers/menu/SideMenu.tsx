@@ -1,4 +1,4 @@
-import { useNavigate, useParams } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { useContext, useEffect, useState } from 'react';
 
 //styles
@@ -8,11 +8,9 @@ import { BtnLogout, BtnMenuMobile, HeaderMenu, Menu, UserOptions } from './SideM
 import { FaBoxOpen, FaCoins, FaUserFriends, FaLayerGroup, FaChartPie, FaCheckCircle, FaPowerOff } from "react-icons/fa";
 import { FiSettings, FiUser, FiArrowRight, FiArrowLeft } from "react-icons/fi";
 
-
 //utils
 import { getUserLocalStorage } from 'context/utils/utils';
 import { AuthContext } from 'context/AuthProvider/AuthProvider';
-
 
 //modal
 import { UserConfigContext } from 'context/ConfigModal/ConfigModal';
@@ -103,7 +101,7 @@ export const SideMenu = () =>{
                 <li className={`${selected.dashboard ? 'selected' : ''}`} onClick={() => handleSelected('dashboard')}> 
                     <div className='listItem' onClick={() => navigate("/main")}>
                         <span><FaChartPie className="iconList"/></span>
-                        <p> Dashboard Gera</p>
+                        <p> Dashboard Geral</p>
                     </div>
                 </li>
 

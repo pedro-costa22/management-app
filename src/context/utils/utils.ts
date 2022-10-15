@@ -1,4 +1,4 @@
-import { IUserRegister, ILogin, IUser } from "interfaces/User/user-model";
+import { IUserRegister, ILogin, IUser } from "interfaces/User/user.model";
 
 export function setUserLocalStorage(user: IUser | null){
     localStorage.setItem('user', JSON.stringify(user));

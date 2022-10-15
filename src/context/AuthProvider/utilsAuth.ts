@@ -1,5 +1,5 @@
 import { registerAPI, loginAPI } from "apis/User/UserAPI";
-import { IUserRegister, ILogin, IUser } from "interfaces/User/user-model";
+import { IUserRegister, ILogin, IUser } from "interfaces/User/user.model";
 
 export async function RegisterRequest({user}: {user: IUserRegister}) {
    try {
