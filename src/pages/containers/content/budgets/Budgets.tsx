@@ -3,13 +3,13 @@ import { PageTitle } from "components/PageTitle/PageTitle";
 
 import { FaUserFriends } from "react-icons/fa";
 
-export const Employee = () =>{
+export const Budgets = () =>{
     return (
         <>
             <HeaderSearch />
             <PageTitle 
                 icon={<FaUserFriends />}
-                title="Gestão de funcionarios"
+                title="Orçamentos"
             />
 
         </>

@@ -3,4 +3,5 @@ export interface IProduct {
     min: number;
     max: number;
     current: number;
+    idUser?: number;
 }

@@ -5,8 +5,15 @@ export const InventoryCont = styled.section`
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 76%;
+    height: 70vh;
     padding: 0px 40px;
+    position: relative;
+
+    //Responsive 
+    @media screen and (min-width: 992px) and (max-width: 1199.98px) {
+        height: 60vh;
+    }
+    
 
 `;
 
@@ -265,8 +272,19 @@ export const InventoryItems = styled.div`
     height: 100%;
     border-top: 3px solid #fff;
 
+    overflow: auto;
+    ::-webkit-scrollbar {
+        width: 8px;
+        background-color: transparent;
+    }
+    ::-webkit-scrollbar-thumb {
+        background-color: var(--color-secondary);
+        border-radius: 5px;
+    }
+    
+
     .itemsTitle {
-        margin: 28px 0px;
+        margin: 28px 0px 4px 0px;
 
         h3 {
             font-family: 'Poppins', sans-serif;
@@ -274,6 +292,12 @@ export const InventoryItems = styled.div`
             font-weight: 500;
             margin-bottom: 4px;
         }
+    }
+
+    .items {
+        display: flex;
+        flex-direction: column-reverse;
+        padding-right: 10px;
     }
 
     //Responsive 
