@@ -180,7 +180,7 @@ export const Inventory = () =>{
                 </HeaderInventory>
 
                 {openModalDelete && <ModalDelete openModal={setOpenModalDelete} productToDelete={productToDelete} allProducts={allProducts} />}
-                {openModal && <ModalEdit closeModal={setOpenModal} productToEdit={productToEdit}/>}
+                {openModal && <ModalEdit closeModal={setOpenModal} productToEdit={productToEdit} allProducts={allProducts}/>}
                 <InventoryItems>
                 
               
