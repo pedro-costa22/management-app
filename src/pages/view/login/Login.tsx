@@ -18,11 +18,11 @@ export const Login = () =>{
 
     const [email, setEmail] = useState<string>('');
     const [password, setPassword] = useState<string>('');
-		const [LoginErro, setLoginErro] = useState<boolean>(false);
-		const [errorInputs, setErrorInputs] = useState({
-			email: 0,
-			password: 0,
-		});
+	const [LoginErro, setLoginErro] = useState<boolean>(false);
+	const [errorInputs, setErrorInputs] = useState({
+		email: 0,
+		password: 0,
+	});
 
     async function login(email: string, password: string) {
        if(email != '' && password != ''){
@@ -34,11 +34,11 @@ export const Login = () =>{
         return navigate('/main');
 			 }
 
-			 if(email == ''){
+			 if(email === ''){
 				return setErrorInputs(prevState => ({...prevState,email: 1 }));
 			 }
 
-			 if(password == ''){
+			 if(password === ''){
 				return setErrorInputs(prevState => ({...prevState, password: 1}));
 			 }
 

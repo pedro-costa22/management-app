@@ -16,13 +16,10 @@ import Layout from './layout/Layout';
 //components
 import { MainDashboard } from './pages/containers/content/main-dashboard/MainDashboard';
 import { Inventory } from './pages/containers/content/inventory/Inventory';
-import { Employee } from './pages/containers/content/employee/Employee';
 import { Financial } from './pages/containers/content/financial/Financial';
 import { Projects } from './pages/containers/content/projects/Projects';
 import { Goals } from './pages/containers/content/goals/Goals';
-
-
-
+import { Budgets } from 'pages/containers/content/budgets/Budgets';
 
 
 function App() {
@@ -40,7 +37,7 @@ function App() {
               <Route index element={<MainDashboard />} />
               <Route path='/main/inventory-control' element={<Inventory/>} />
               <Route path='/main/financial-control' element={<Financial />} />
-              <Route path='/main/employee-control' element={<Employee />} />
+              <Route path='/main/budgets' element={<Budgets />} />
               <Route path='/main/projects' element={<Projects />} />
               <Route path='/main/goals' element={<Goals />} />
             </Route> 
