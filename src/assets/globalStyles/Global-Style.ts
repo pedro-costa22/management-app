@@ -42,6 +42,54 @@ const GlobalStyle: any = createGlobalStyle`
 
     }
 
+    //classes
+    .labelDefault {
+        font-family: 'Poppins', sans-serif;
+        font-size: 1.2rem;
+        font-weight: 500;
+    }
+
+    .inputDefault {
+        width: 100%;
+        height: 48px;
+        border-radius: 8px;
+        outline: none;
+        border: none;
+        padding: 0px 20px;
+        font-family: 'Poppins', sans-serif;
+        box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+        position: relative;
+
+        :focus {
+            outline: 1px solid;
+            outline-color: rgb(84 105 212 / 0.5);
+        }
+    }
+
+    .buttonDefault {
+        font-size: 1.1rem;
+        font-weight: 500;
+        letter-spacing: 1px;
+        color: #fff;
+        width: 100%;
+        height: 50px;
+        background: linear-gradient(90deg, #CC81FF 0%, #A25CFF 100%);
+        border-radius: 8px;
+        border: none;
+        cursor: pointer;
+        box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+        transition: all .3s;
+        outline: none;
+
+        :hover {
+            background: linear-gradient(90deg, #AF53EE 0%, #8A35FB 100%);
+        }
+
+        @media screen and (max-width: 575.98px) {
+            font-size: 1rem;
+        }
+    }
+
 
 `;
 
