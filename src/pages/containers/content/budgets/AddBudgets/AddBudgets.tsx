@@ -85,6 +85,7 @@ export const AddBudgets = ({closeAddBudget, setAllBudgets, setError}:  IAddBudge
                         type="text"
                         value={budget.description}
                         onChange={(e: React.ChangeEvent<HTMLInputElement>) => setBudget(prevState => ({...prevState, description: e.target.value}))}
+                        required={true}
                         />
                 </div>
 
@@ -98,6 +99,7 @@ export const AddBudgets = ({closeAddBudget, setAllBudgets, setError}:  IAddBudge
                                 className="inputDefault"
                                 value={budget.startDate}
                                 onChange={(e: React.ChangeEvent<HTMLInputElement>) => setBudget(prevState => ({...prevState, startDate: e.target.value}))}
+                                required={true}
                             />
                         </div>
 
@@ -108,6 +110,7 @@ export const AddBudgets = ({closeAddBudget, setAllBudgets, setError}:  IAddBudge
                                 className="inputDefault"
                                 value={budget.finalDate}
                                 onChange={(e: React.ChangeEvent<HTMLInputElement>) => setBudget(prevState => ({...prevState, finalDate: e.target.value}))}
+                                required
                             />
                         </div>
 
@@ -118,6 +121,7 @@ export const AddBudgets = ({closeAddBudget, setAllBudgets, setError}:  IAddBudge
                                 className="inputDefault"
                                 value={budget.value}
                                 onChange={(e: React.ChangeEvent<HTMLInputElement>) => setBudget(prevState => ({...prevState, value: e.target.value}))}
+                                required
                             />
                         </div>
                     </div>

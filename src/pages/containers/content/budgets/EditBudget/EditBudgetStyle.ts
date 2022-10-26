@@ -109,6 +109,39 @@ export const ModalOptions = styled.div`
                 input {
                     outline: 1px solid;
                     outline-color: rgb(84 105 212 / 0.5);
+                    ::placeholder {
+                        display: none;
+                    }
+                }
+
+                .dateItems {
+                    display: flex;
+                    justify-content: space-between;
+                    width: 100%;
+                    font-family: 'Poppins', sans-serif;
+                    box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+                    outline: 1px solid;
+                    outline-color: rgb(84 105 212 / 0.5);
+                    border-radius: 8px;
+                    padding: 0px 20px;
+                    position: relative;
+
+                    input {
+                        padding: 0px;
+                        width: 100%;
+                        height: 48px;
+                        border-radius: 8px;
+                        outline: none;
+                        border: none;
+                        position: relative;
+                
+                    }
+
+                    span {
+                        position: absolute;
+                        right: 20px;
+                        bottom: 10px;
+                    }
                 }
             }
         }

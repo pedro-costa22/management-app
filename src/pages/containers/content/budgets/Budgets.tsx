@@ -29,6 +29,15 @@ export const Budgets = () =>{
         name: '',
         idUser: ''
     })
+    const [budgetToEdit, setBudgetToEdit] = useState({
+        name: '',
+        client: '',
+        description: '',
+        startDate: '',
+        finalDate: '',
+        value: '',
+        idUser: '',
+    })
 
 
     async function GetBudgets() {
@@ -58,14 +67,26 @@ export const Budgets = () =>{
 
     }
 
-    const editBudget = () => {
+    const editBudget = (name: string, client: string, desc: string, startDate: string, finalDate: string, value: string) => {
         setModalEdit(true);
 
-        //criar a lógica para alterar as informações do orçamento
+        setBudgetToEdit(prevState => ({
+            ...prevState,
+            name: name,
+            client: client,
+            description: desc,
+            startDate: startDate,
+            finalDate: finalDate,
+            value: value,
+            idUser: getUserLocalStorage().id
+        }));
         
 
     }
 
+    const renderList = () => {
+        window.location.reload();
+    }
 
     useEffect(() => {
         GetBudgets();
@@ -97,7 +118,7 @@ export const Budgets = () =>{
                         allBudgets={allBudgets}
                     />
                 }
-                {modalEdit && <EditBudget handleModal={setModalEdit}/>}
+                {modalEdit && <EditBudget handleModal={setModalEdit} budgetToEdit={budgetToEdit} renderList={renderList} setError={setError}/>}
                 
                 {!openAddBudgets && (
                      <AddBudgetsButton 
