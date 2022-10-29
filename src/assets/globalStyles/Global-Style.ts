@@ -34,6 +34,7 @@ const GlobalStyle: any = createGlobalStyle`
         --green-default: #3CD8BF;
         --error-color: #FF5271;
         --text-grey: #5E5959;
+        --success-color: #7DD9D0;
     }
 
     body {
