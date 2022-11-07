@@ -72,7 +72,7 @@ export const Sales = styled.div`
 
 export const SalesItems = styled.div`
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
     width: 100%;
     height: 50%;
     margin-top: 28px;
