@@ -5,6 +5,7 @@ const getById = {
     idUser: getUserLocalStorage().id
 }
 
+
 export async function monthlyGoal() {
     //get sales
     const sales = await GetSale(getById);
@@ -55,6 +56,19 @@ export async function weeklyGoal() {
 
 }
 
-export async function budget() {
+export async function sales() {
+    const sales = await GetSale(getById);
+    const salesArray = [...sales.sales];
+    let total: number = 0;
+
+    salesArray.forEach(sale => {
+        total += sale.sale;
+    })
+
+    return total;
 
 }
+
+
+
+

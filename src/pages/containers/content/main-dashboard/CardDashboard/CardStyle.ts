@@ -47,7 +47,13 @@ export const CardCont = styled.div<{background: string}>`
         }
 
         .value {
+            display: flex;
+            align-items: center;
             font-size: 5rem;
+
+            .valueRs {
+                font-size: 1.4rem;
+            }
         }
     }
 
