@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useLocation } from 'react-router-dom'
 import { useContext, useEffect, useState } from 'react';
 
 //styles
@@ -23,13 +23,14 @@ export const SideMenu = () =>{
     const contextUser = useContext(AuthContext);
     const userConfig = useContext(UserConfigContext);
     const navigate = useNavigate();
+    const location = useLocation();
 
     const [openMenu, setOpenMenu] = useState<boolean>(false);
     const [selected, setSelected] = useState({
-        dashboard: true,
+        dashboard: false,
         inventory: false,
         financial: false,
-        employee: false,
+        budgets: false,
         projects: false,
         goals: false
     });
@@ -44,7 +45,7 @@ export const SideMenu = () =>{
             dashboard: false,
             inventory: false,
             financial: false,
-            employee: false,
+            budgets: false,
             projects: false,
             goals: false
         }));
@@ -61,7 +62,8 @@ export const SideMenu = () =>{
 
     }
 
-   useEffect(() => {
+
+    useEffect(() => {
     setUser(prevState => ({
         ...prevState,
         userName: getUserLocalStorage().name,
@@ -70,6 +72,37 @@ export const SideMenu = () =>{
 
     }, [getUserLocalStorage().name, getUserLocalStorage().profile]) 
 
+
+    useEffect(() => {
+        let currentRoute = location.pathname;
+
+        switch(currentRoute) {
+            case '/main':
+                handleSelected('dashboard');
+                break;
+            
+            case '/main/inventory-control':
+                handleSelected('inventory');
+                break;
+
+            case '/main/financial-control':
+                handleSelected('financial');
+                break;
+
+            case '/main/budgets':
+                handleSelected('budgets');
+                break;
+
+            case '/main/projects':
+                handleSelected('projects');
+                break;
+
+            case '/main/goals':
+                handleSelected('goals');
+                break;
+        } 
+      
+    }, [])
 
     return (
         <Menu active={openMenu}>
@@ -119,10 +152,10 @@ export const SideMenu = () =>{
                     </div>
                 </li>
 
-                <li className={`${selected.employee ? 'selected' : ''}`} onClick={() => handleSelected('employee')}>
-                    <div className='listItem' onClick={() => navigate("/main/employee-control")}>
+                <li className={`${selected.budgets ? 'selected' : ''}`} onClick={() => handleSelected('budgets')}>
+                    <div className='listItem' onClick={() => navigate("/main/budgets")}>
                         <span><FaUserFriends className='iconList'/></span>
-                        <p>Gestão de funcionarios</p>
+                        <p>Orçamentos</p>
                     </div>
                 </li>
 

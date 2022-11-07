@@ -69,7 +69,7 @@ export const Menu = styled.nav<{active: boolean}>`
     @media screen and (max-width: 575.98px) {
         position: absolute;
         width: 120px;
-        z-index: 99;
+        z-index: 9999;
         left: ${props => props.active != true ? '-105px' : '0px'};
         padding: 18px 18px;
         box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;

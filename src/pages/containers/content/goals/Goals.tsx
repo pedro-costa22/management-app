@@ -1,3 +1,4 @@
+import { DesenvPage } from "components/DesenvPage/DesenvPage";
 import { HeaderSearch } from "components/HeaderSearch/HeaderSearch"
 import { PageTitle } from "components/PageTitle/PageTitle"
 
@@ -11,6 +12,8 @@ export const Goals = () => {
                 icon={<FaCheckCircle />}
                 title="Projetos"
             />
+
+            <DesenvPage />
 
         </>
     )
