@@ -86,7 +86,7 @@ export const Financial = () =>{
         if(payload.sales){
             payload.sales.forEach((element: any) => {
                 if(!sales.includes(element)) {
-                    setSales(prevState => [...prevState, element])
+                    setSales(prevState => [element, ...prevState, ])
                 }
             }) 
         }
