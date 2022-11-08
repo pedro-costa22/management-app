@@ -32,6 +32,17 @@ export const DashboardGraficts = styled.div`
     width: 100%;
     height: 44vh;
     margin-top: 14px;
-    border: 1px solid red;
+
+    .bar {
+        width: 60%;
+    }
+
+    .circle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40%;
+        border: 1px solid yellow;
+    }
 
 `;

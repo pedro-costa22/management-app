@@ -8,14 +8,50 @@ import { DashboardCont, DashboardGraficts, DashboardHeader } from "./MainDashboa
 import { Card } from "./CardDashboard/Card";
 
 import { FaCalendar } from "react-icons/fa";
-import { useEffect, useState } from "react";
-import { sales, monthlyGoal, weeklyGoal } from "./calculations/metas";
+import { useEffect, useRef, useState } from "react";
+import { sales, monthlyGoal, weeklyGoal, products } from "./calculations/metas";
+
+//chart js
+import { Bar, Doughnut } from "react-chartjs-2";
+import {
+    Chart as ChartJS,
+    BarElement, 
+    CategoryScale,
+    LinearScale,
+    PointElement
+} from 'chart.js';
+
+ChartJS.register(
+    BarElement,
+    CategoryScale,
+    LinearScale,
+    PointElement
+)
+
+
 
 export const MainDashboard = () =>{
 
     const [monthly, setMonthly] = useState<number>(0);
     const [weekly, setWeekly] = useState<number>(0);
     const [salesValue, setSalesValue] = useState<number>(0);
+    const [productsArray, setProductsArray] = useState<Array<number>>([]);
+    const [productsLabel, setProductLabel] = useState<Array<string>>([]);
+
+
+
+    const data = {
+        labels: [...productsLabel],
+        datasets: [{
+            data: [...productsArray],
+            backgroundColor: ['#A862FF', '#C97FFF'],
+        }]
+        
+    };
+    const options = {
+        responsive: true,
+        
+    };
 
     async function handleMonthly() {
         const monthlyValue = await monthlyGoal();
@@ -32,13 +68,32 @@ export const MainDashboard = () =>{
         setSalesValue(salesObj);
     }
 
-    
+    async function handleProducts() {
+        const productObj = await products();
+
+        productObj.products.forEach((product: any) => {
+            setProductsArray(prevState => [...prevState, product.current]);
+            setProductLabel(prevState => [...prevState, product.name]);
+        });
+
+      
+
+        
+    }
+
 
     useEffect(() => {
         handleMonthly();
         handleWeekly();
         handleSales();
+        handleProducts();
+
     }, [])
+
+    useEffect(() => {
+        console.log(productsArray);
+
+    }, [productsArray])
 
     
 
@@ -58,7 +113,13 @@ export const MainDashboard = () =>{
                 </DashboardHeader>
 
                 <DashboardGraficts>
-                    
+                    <div className="bar">
+                        <p className="labelDefault">Acompanhamento do estoque</p>
+                        <Bar data={data} options={options}></Bar>
+                    </div>
+                    <div className="circle">
+                
+                    </div>
                 </DashboardGraficts>
                 
             </DashboardCont>

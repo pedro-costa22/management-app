@@ -1,5 +1,6 @@
 import { getUserLocalStorage } from "context/utils/utils";
 import { GetFinancial, GetSale } from "../../financial/utilsFinancial";
+import { GetAllProducts } from "../../inventory/utilsInventory";
 
 const getById = {
     idUser: getUserLocalStorage().id
@@ -67,6 +68,11 @@ export async function sales() {
 
     return total;
 
+}
+
+export async function products(){
+    const productsArray = await GetAllProducts(getById);
+    return productsArray;
 }
 
 
