@@ -36,10 +36,11 @@ Visamos utilizar tipografias modernas, de fácil leitura web e coerentes com os 
 * **Poppins** 
   * A Poppins é uma tipografia para leitura web, sendo legível em diferentes tamanhos e resoluções, também contém uma família tipográfica completa, tornando sua aplicação mais versátil na plataforma. 
 
-
-**Vídeo da aplicação desenvolvida**
-
 <hr>
+
+**Por dentro da Aplicação**
+
+
 
 
 
