@@ -1,4 +1,5 @@
 import { getUserLocalStorage } from "context/utils/utils";
+import { GetBudgetsAll } from "../../budgets/utilsBudgets";
 import { GetFinancial, GetSale } from "../../financial/utilsFinancial";
 import { GetAllProducts } from "../../inventory/utilsInventory";
 
@@ -73,6 +74,11 @@ export async function sales() {
 export async function products(){
     const productsArray = await GetAllProducts(getById);
     return productsArray;
+}
+
+export async function budgets(){
+    const budgetsRequest = await GetBudgetsAll(getById);
+    return budgetsRequest.budgets;
 }
 
 

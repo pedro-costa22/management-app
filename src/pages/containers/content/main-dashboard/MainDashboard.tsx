@@ -8,8 +8,8 @@ import { DashboardCont, DashboardGraficts, DashboardHeader } from "./MainDashboa
 import { Card } from "./CardDashboard/Card";
 
 import { FaCalendar } from "react-icons/fa";
-import { useEffect, useRef, useState } from "react";
-import { sales, monthlyGoal, weeklyGoal, products } from "./calculations/metas";
+import { useEffect, useState } from "react";
+import { sales, monthlyGoal, weeklyGoal, products, budgets } from "./calculations/metas";
 
 //chart js
 import { Bar, Doughnut } from "react-chartjs-2";
@@ -18,16 +18,19 @@ import {
     BarElement, 
     CategoryScale,
     LinearScale,
-    PointElement
+    PointElement,
+    DoughnutController,
+    ArcElement,
 } from 'chart.js';
 
 ChartJS.register(
     BarElement,
     CategoryScale,
     LinearScale,
-    PointElement
+    PointElement,
+    DoughnutController,
+    ArcElement,
 )
-
 
 
 export const MainDashboard = () =>{
@@ -35,38 +38,53 @@ export const MainDashboard = () =>{
     const [monthly, setMonthly] = useState<number>(0);
     const [weekly, setWeekly] = useState<number>(0);
     const [salesValue, setSalesValue] = useState<number>(0);
+
+    //datas to dashboard
     const [productsArray, setProductsArray] = useState<Array<number>>([]);
     const [productsLabel, setProductLabel] = useState<Array<string>>([]);
-
-
+    const [budgetsLabel, setBudgetsLabel] = useState<Array<string>>([]);
+    const [budgetsArray, setBudgetsArray] = useState<Array<number>>([]);
 
     const data = {
         labels: [...productsLabel],
         datasets: [{
             data: [...productsArray],
             backgroundColor: ['#A862FF', '#C97FFF'],
+           
+        }]
+        
+    };
+    const dataCircle = {
+        labels: [...budgetsLabel],
+        datasets: [{
+            data: [...budgetsArray],
+            backgroundColor: ['#FF8EAB', '#399AE6', '#3CD8BF'],
+            hoverOffset: 2,
+
         }]
         
     };
     const options = {
         responsive: true,
-        
+    };
+    const optionsCircle = {
+        responsive: true,
     };
 
     async function handleMonthly() {
         const monthlyValue = await monthlyGoal();
         setMonthly(monthlyValue);
-    }
+    };
 
     async function handleWeekly() {
         const weeklyValue = await weeklyGoal();
         setWeekly(weeklyValue);
-    }
+    };
 
     async function handleSales() {
         const salesObj = await sales();
         setSalesValue(salesObj);
-    }
+    };
 
     async function handleProducts() {
         const productObj = await products();
@@ -75,11 +93,17 @@ export const MainDashboard = () =>{
             setProductsArray(prevState => [...prevState, product.current]);
             setProductLabel(prevState => [...prevState, product.name]);
         });
+ 
+    };
 
-      
-
+    async function handleBudgets() {
+        const budgetsArray = await budgets();
+        budgetsArray.forEach((item: any) => {
+            setBudgetsLabel(prevState => [...prevState, item.name]);    
+            setBudgetsArray(prevState => [...prevState, item.value]);
+        });
         
-    }
+    };
 
 
     useEffect(() => {
@@ -87,13 +111,8 @@ export const MainDashboard = () =>{
         handleWeekly();
         handleSales();
         handleProducts();
-
-    }, [])
-
-    useEffect(() => {
-        console.log(productsArray);
-
-    }, [productsArray])
+        handleBudgets();
+    }, []);
 
     
 
@@ -118,13 +137,16 @@ export const MainDashboard = () =>{
                         <Bar data={data} options={options}></Bar>
                     </div>
                     <div className="circle">
-                
+                        <p className="labelDefault">Acompanhamento dos orçamentos</p>
+                        <div>
+                            <Doughnut data={dataCircle} options={optionsCircle}></Doughnut>
+                        </div>
                     </div>
                 </DashboardGraficts>
                 
             </DashboardCont>
             
         </>
-    )
+    );
 };
 
