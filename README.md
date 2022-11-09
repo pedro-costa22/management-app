@@ -40,6 +40,11 @@ Visamos utilizar tipografias modernas, de fácil leitura web e coerentes com os 
 
 **Por dentro da Aplicação**
 
+https://user-images.githubusercontent.com/89493619/200722388-5151f268-7d27-4c73-84a3-2c08c9147a08.mp4
+
+https://user-images.githubusercontent.com/89493619/200722402-df6b2eb4-e788-46d7-b550-8f0928fb12cb.mp4
+
+
 
 
 
