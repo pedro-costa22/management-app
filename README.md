@@ -12,11 +12,15 @@ A proposta do é unificar todas as tecnologias estudadas no 3° Semestre do curs
 O Tema principal do nosso projeto foi desenvolvido em fundo branco, visando um maior contraste e impacto visual. Além disso, 
 
 
-``` A paleta de cores utilizada: ```   
-<img width="100px" height="100px" src="https://user-images.githubusercontent.com/68287006/176708043-029fd869-fa5a-4c71-9c4a-84bbbe1d7fad.png">
-<img width="100px" height="100px" src="https://user-images.githubusercontent.com/68287006/176708180-e33280ea-690a-4cea-bb5b-dbdcf70035cc.png">
-<img width="100px" height="100px" src="https://user-images.githubusercontent.com/68287006/176708277-7423aa66-6c40-4ddb-8242-4318e7f22788.png">
-<img width="100px" height="100px" src="https://user-images.githubusercontent.com/68287006/176708378-f5c02944-9e63-4101-912d-b60e03d5af42.png">
+``` A paleta de cores utilizada: ``` 
+
+![Rectangle 87](https://user-images.githubusercontent.com/89493619/200720318-ef0e68e7-82f6-4abc-8eeb-bf9b2dd7a3cc.png)
+![Rectangle 14](https://user-images.githubusercontent.com/89493619/200720366-6908f5a2-4986-4255-bc6a-9e764b06010d.png)
+![Rectangle 83](https://user-images.githubusercontent.com/89493619/200720382-8394c579-3c9e-4bed-980f-a2c16a734433.png)
+![Rectangle 84](https://user-images.githubusercontent.com/89493619/200720396-f988b3e5-cad0-4c90-b425-1a057e5c3118.png)
+![Rectangle 85](https://user-images.githubusercontent.com/89493619/200720402-e077f0fa-3767-414b-813a-67a660ccc30f.png)
+![Rectangle 86](https://user-images.githubusercontent.com/89493619/200720408-394ac8bf-2fb3-4a08-a8c4-b0122af74220.png)
+
 
 ``` Tipografia: ```   
 
